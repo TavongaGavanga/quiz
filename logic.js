@@ -247,7 +247,7 @@ function endQuiz() {
     const totalQuestions = questions[currentTopic].length;
     const percentage = (score / totalQuestions) * 100;
 
-    const passMessage = percentage >= 70 ? 'Congratulations, you passed!' : 'You did not pass.';
+    const passMessage = percentage >= 50 ? 'Congratulations, you passed!' : 'You did not pass.';
     scoreElement.textContent = `Score: ${score} out of ${totalQuestions}`;
     scoreElement.style.display = 'block';
     const percentageElement = document.createElement('p');
@@ -256,7 +256,7 @@ function endQuiz() {
     scoreElement.insertAdjacentElement('afterend', percentageElement);
     const resultElement = document.createElement('p');
     resultElement.textContent = `Result: ${passMessage}`;
-    resultElement.classList.add(percentage >= 70 ? 'pass' : 'fail');
+    resultElement.classList.add(percentage >= 50 ? 'pass' : 'fail');
     percentageElement.insertAdjacentElement('afterend', resultElement);
 }
 
